@@ -1,0 +1,5 @@
+package com.parkease.exceptions;
+
+public class ResourceNotFoundException {
+
+}

@@ -1,0 +1,36 @@
+.left-section{
+    width: 25%;
+}
+.right-section{
+    width: 75%;
+    overflow: scroll;
+    height: 500px;
+}
+.floor{
+    display: flex;
+    border: 1px solid black;
+    padding: 1rem;
+    border-radius: 1rem;
+    gap: 1rem;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.slot{
+    border: 1px solid black;
+}
+.reserved {
+   height: 1rem;
+   width: 1rem;
+   background-color: rgb(185, 182, 182);
+   
+
+}
+.available {
+   height: 1rem;
+   width: 1rem;
+   background-color:rgb(242, 247, 242);
+   border:1px solid black
+   
+
+}

@@ -1,0 +1,53 @@
+.hero {
+    background-image: url("../../parking.jpg");
+    height: 80vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-txt {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 5rem;
+    
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.findbtn {
+    background-color: #ffcc00;
+    color: black;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.findbtn:hover {
+    background-color: #e6b800;
+}
+
+/* .searchbox{
+    
+    padding: 0.8rem;
+    border-radius: 0.8rem;
+    color: black;
+    /* justify-content: space-between; */
+ 
+
+

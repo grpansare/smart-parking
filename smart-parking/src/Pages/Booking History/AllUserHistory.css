@@ -1,0 +1,201 @@
+.user-history-container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: "Arial", sans-serif;
+}
+
+h1 {
+  color: #2c3e50;
+  margin-bottom: 2rem;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.search-input {
+  flex: 1;
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  min-width: 250px;
+}
+
+.filter-select {
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 14px;
+  background-color: #a35c7a;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter-select:focus {
+  outline: none;
+  border-color: #3498db;
+}
+
+.filter-select option {
+  padding: 0.8rem;
+  background-color: #fff;
+  color: black;
+}
+
+.filter-select:focus option {
+  background-color: #fef9e1;
+}
+
+.history-table-container {
+  overflow-x: auto;
+}
+
+.history-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.history-table th,
+.history-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #ecf0f1;
+  min-width: 150px;
+}
+
+.history-table th {
+  background-color: purple;
+  color: white;
+}
+
+.history-table tr:hover {
+  background-color: #f8f9fa;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.status-badge.completed {
+  background-color: green;
+  color: white;
+}
+.status-badge.pending {
+  background-color: rgb(221, 233, 92);
+  color:black;
+}
+
+.status-badge.active {
+  background-color: lightseagreen;
+  color: black;
+}
+
+.status-badge.cancelled {
+  background-color: #e74c3c;
+  color: white;
+}
+/* Add these styles to your existing AllUserHistory.css file */
+
+.status-dropdown {
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+  width: 130px;
+  border: 1px solid #ddd;
+  background-color: white;
+  transition: all 0.2s ease;
+  appearance: menulist; /* Shows the dropdown arrow */
+}
+
+.status-dropdown:focus {
+  outline: none;
+  border-color: #4a90e2;
+  box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
+}
+
+.status-dropdown option {
+  padding: 8px;
+}
+
+.status-dropdown option:disabled {
+  color: #999;
+  background-color: #f5f5f5;
+}
+
+.active-dropdown {
+  border-left: 3px solid #ffc107;
+}
+
+.completed-dropdown {
+  border-left: 3px solid #28a745;
+}
+
+.canceled-dropdown {
+  border-left: 3px solid #dc3545;
+}
+
+.loading-spinner {
+  display: inline-block;
+  font-size: 14px;
+  font-style: italic;
+  color: #666;
+}
+
+/* Existing status badge styles */
+.status-badge {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: capitalize;
+  display: inline-block;
+}
+
+.status-badge.active {
+  background-color: #fff4d4;
+  color: #ffa000;
+  border: 1px solid #ffd54f;
+}
+
+.status-badge.completed {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+  border: 1px solid #a5d6a7;
+}
+
+.status-badge.canceled {
+  background-color: #ffebee;
+  color: #c62828;
+  border: 1px solid #ef9a9a;
+}
+
+/* Ensure the table row has enough space for status dropdown */
+.history-table td, .history-table th {
+  padding: 12px 10px;
+}
+
+@media (max-width: 768px) {
+  .controls {
+    flex-direction: column;
+  }
+
+  .search-input {
+    width: 100%;
+  }
+
+  .filter-buttons {
+    justify-content: center;
+  }
+}

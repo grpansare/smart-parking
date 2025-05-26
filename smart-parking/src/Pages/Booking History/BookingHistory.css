@@ -1,0 +1,123 @@
+/* body {
+  background-color: #bddde4;
+} */
+.booking-history-container {
+
+
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  max-width: 800px;
+  margin: 9rem auto;
+  background-color: #9ec6f3;
+  border-radius: 0.9rem;
+}
+
+.booking-history-container {
+  max-width: 900px;
+  padding: 20px;
+  max-width: 800px;
+  margin: 9rem auto;
+  background-color: #9ec6f3;
+  border-radius: 0.9rem;
+}
+
+.booking-title {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 28px;
+  color: #333;
+}
+
+.filter-options {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+  gap: 10px;
+}
+
+.booking-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.booking-item {
+  padding: 20px;
+  border-radius: 12px;
+  background-color: #f8f9fa;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.booking-item h3 {
+  margin-bottom: 10px;
+  color: #007bff;
+}
+
+.booking-info {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  font-size: 15px;
+  color: #555;
+}
+
+.booking-info span strong {
+  color: #222;
+}
+
+.loading-text,
+.no-bookings {
+  text-align: center;
+  color: #888;
+  font-size: 18px;
+}
+
+
+/* Add these styles to your existing BookingHistory.css file */
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  gap: 10px;
+}
+
+.page-numbers {
+  display: flex;
+  gap: 5px;
+}
+
+.page-number {
+  padding: 5px 10px;
+  border: 1px solid #ddd;
+  background-color: #f8f8f8;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.page-number.active {
+  background-color: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+.pagination-button {
+  padding: 5px 12px;
+  border: 1px solid #ddd;
+  background-color: #f8f8f8;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.pagination-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pagination-info {
+  text-align: center;
+  margin-top: 10px;
+  color: #666;
+  font-size: 0.9rem;
+}

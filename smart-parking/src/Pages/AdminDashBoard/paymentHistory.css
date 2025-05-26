@@ -1,0 +1,184 @@
+.payment-history-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  margin-top: 30px;
+  padding: 1.5rem;
+  background-color: lightskyblue;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  height: 100vh;
+  overflow: scroll;
+}
+
+.payment-history-title {
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+}
+
+.filters-container {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  align-items: center;
+}
+
+.search-container {
+  flex: 3;
+}
+
+.filter-container {
+  flex: 1;
+}
+
+.search-filter,
+.status-filter {
+  padding: 0.7rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  width: 100%;
+  background: white;
+  transition: border-color 0.3s ease;
+}
+
+.search-filter:focus,
+.status-filter:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+.transactions-list {
+  display: grid;
+  gap: 1.2rem;
+}
+
+.transaction-card {
+  background: white;
+  border-radius: 10px;
+  padding: 1.2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.transaction-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.transaction-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.space-name {
+  margin: 0;
+  color: #2c3e50;
+  font-size: 1.1rem;
+  max-width: 70%;
+}
+
+.status-badge {
+  padding: 0.3rem 0.7rem;
+  border-radius: 18px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.status-badge.completed {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+}
+
+.status-badge.pending {
+  background-color: #fff3e0;
+  color: #ef6c00;
+}
+
+.status-badge.failed {
+  background-color: #ffebee;
+  color: #c62828;
+}
+
+.transaction-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+.detail-group {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.detail-item {
+  display: flex;
+  flex-direction: column;
+  min-width: 120px;
+}
+
+.address-item {
+  flex-grow: 1;
+  max-width: 400px;
+}
+
+.detail-label {
+  color: #7f8c8d;
+  font-size: 0.85rem;
+  margin-bottom: 0.2rem;
+}
+
+.detail-value {
+  color: #34495e;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.amount-value {
+  color: #27ae60;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .payment-history-container {
+    padding: 1rem;
+  }
+
+  .filters-container {
+    flex-direction: column;
+  }
+
+  .search-container,
+  .filter-container {
+    width: 100%;
+  }
+
+  .transaction-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.7rem;
+  }
+
+  .space-name {
+    max-width: 100%;
+  }
+
+  .transaction-details {
+    flex-direction: column;
+  }
+
+  .detail-group {
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+  }
+
+  .detail-item {
+    width: 100%;
+  }
+}

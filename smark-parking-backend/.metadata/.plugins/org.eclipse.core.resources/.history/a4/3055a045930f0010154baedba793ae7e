@@ -1,0 +1,140 @@
+package com.parkease.services;
+
+import org.springframework.http.MediaType;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+
+import java.time.Instant;
+import java.time.ZonedDateTime;
+import java.util.List;
+
+import org.springframework.http.HttpHeaders;
+
+import org.apache.pdfbox.pdmodel.PDDocument;
+import org.apache.pdfbox.pdmodel.PDPage;
+import org.apache.pdfbox.pdmodel.PDPageContentStream;
+import org.apache.pdfbox.pdmodel.font.PDType1Font;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+
+import com.parkease.beans.Booking;
+import com.parkease.beans.ParkingSlot;
+import com.parkease.beans.ParkingSpace;
+import com.parkease.beans.User;
+import com.parkease.dao.BookingRepository;
+import com.parkease.dao.ParkingSlotRepository;
+import com.parkease.dao.ParkingSpaceRepo;
+import com.parkease.dao.UserRepository;
+import com.parkease.dtos.BookingRequest;
+
+@Service
+public class BookingService {
+	 @Autowired
+	    private BookingRepository bookingRepository;
+	 
+	 @Autowired
+	 private ParkingSlotRepository parkingSlotRepository;
+	 
+	 @Autowired
+	 private ParkingSpaceRepo parkingSpaceRepo;
+	 @Autowired
+	 private UserRepository userRepository;;;
+
+	    public Booking saveBooking(BookingRequest bookingReq, Long slotId) {
+	    	 Booking booking=new Booking();
+	    	 booking.setUserId(bookingReq.getUserId());
+	    	 booking.setParkingLotId(bookingReq.getParkingLotId());
+	    	if (bookingReq.getArrivalTime() != null) {
+	    		booking.setArrivalTime(bookingReq.getArrivalTime());
+	        }
+	        if (bookingReq.getDepartureTime() != null) {
+	            booking.setDepartureTime(bookingReq.getDepartureTime());
+	        }
+	    	ParkingSlot parkingSlot=parkingSlotRepository.findById(slotId).get();
+	    	parkingSlot.getBookings().add(booking);
+	    	booking.setParkingSlot(parkingSlot);
+	    	
+	    	
+	    	parkingSlotRepository.save(parkingSlot);
+	        return bookingRepository.save(booking);
+	    }
+        
+	    
+	    @GetMapping("/download/{bookingId}")
+	    public ResponseEntity<byte[]> generateReceipt(@PathVariable Long bookingId) {
+	        try {
+	        	
+	        	
+	        	Booking booking=bookingRepository.findById(bookingId).get();
+	        	ParkingSpace parkingSpace=parkingSpaceRepo.findById(booking.getParkingLotId()).get();
+	        User user=userRepository.findById(booking.getUserId()).get();
+	        			
+	            // Example booking details (In real case, fetch from DB)
+	            String fullName = user.getFullname();
+	            String email = user.getEmail();
+	            String parkingSpot = parkingSpace.getLotName();
+	            long parkingLot = booking.getParkingSlot().getSlotId();
+	            String parkingAddress = parkingSpace.getAddress();
+	            ZonedDateTime Arrival = booking.getArrivalTime();
+	            ZonedDateTime departure = booking.getDepartureTime();
+	            String time = "10:00 AM";
+	            double amountPaid = booking.getAmount();
+
+	            // Generate PDF
+	            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+	            try (PDDocument document = new PDDocument()) {
+	                PDPage page = new PDPage();
+	                document.addPage(page);
+
+	                try (PDPageContentStream contentStream = new PDPageContentStream(document, page)) {
+	                    contentStream.setFont(PDType1Font.HELVETICA_BOLD, 16);
+	                    contentStream.beginText();
+	                    contentStream.newLineAtOffset(100, 700);
+	                    contentStream.showText("Parking Booking Receipt");
+	                    contentStream.endText();
+
+	                    contentStream.setFont(PDType1Font.HELVETICA, 12);
+	                    int y = 660;
+
+	                    String[] lines = {
+	                            "Booking ID: " + bookingId,
+	                            "Name: " + fullName,
+	                            "Email: " + email,
+	                            "Parking Spot: " + parkingSpot,
+	                            "Parking Lot: " + parkingLot,
+	                            "Address: " + parkingAddress,
+	                            "Arrival Time: " + Arrival,
+	                            "Departure Time: " + departure,
+	                            "Amount Paid: " + amountPaid
+	                    };
+
+	                    for (String line : lines) {
+	                        contentStream.beginText();
+	                        contentStream.newLineAtOffset(50, y);
+	                        contentStream.showText(line);
+	                        contentStream.endText();
+	                        y -= 25;
+	                    }
+	                }
+
+	                document.save(baos);
+	            }
+
+	            // Return PDF as response
+	         HttpHeaders headers = new HttpHeaders();
+	         headers.setContentType(MediaType.parseMediaType("application/pdf"));
+
+	            headers.setContentDispositionFormData("attachment", "receipt_" + bookingId + ".pdf");
+
+	            return ResponseEntity.ok()
+	                    .headers(headers)
+	                    .body(baos.toByteArray());
+
+	        } catch (IOException e) {
+	            return ResponseEntity.internalServerError().build();
+	        }
+	    }
+}

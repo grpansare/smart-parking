@@ -1,0 +1,20 @@
+.parkingowners{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 70%;
+  height: 80%;
+    margin: 1rem auto;
+   
+    /* position: relative; */
+
+}
+/* .requests{
+    position: absolute;
+    right: 2rem;
+}
+.no_approved{
+    position: relative;
+    top: 4rem;
+} */

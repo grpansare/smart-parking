@@ -1,0 +1,95 @@
+package com.parkease.services;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
+
+import com.parkease.beans.ParkingOwner;
+import com.parkease.beans.ParkingSlot;
+import com.parkease.beans.ParkingSpace;
+import com.parkease.beans.User;
+import com.parkease.dao.ParkingOwnerRepo;
+import com.parkease.dao.ParkingSpaceRepo;
+import com.parkease.dao.ParkingUserRepo;
+
+@Service
+public class ParkingOwnerServiceImpl implements ParkingOwnerService{
+	
+	@Autowired
+	ParkingOwnerRepo parkingOwnerRepo;
+	@Autowired
+	ParkingSpaceRepo parkingSpaceRepo;
+	
+	@Autowired
+	PasswordEncoder encoder;
+
+	@Override
+	public ParkingOwner createParkignOwner(ParkingOwner parkingOwner) {
+	    // First, save the ParkingOwner
+		
+	    parkingOwner.setRoles("ParkingOwner");
+	  parkingOwner.setPassword(encoder.encode(  parkingOwner.getPassword()));
+	    ParkingOwner savedOwner = parkingOwnerRepo.save(parkingOwner);
+            
+	    // Now, associate the saved owner with ParkingSpace
+	    ParkingSpace parkingSpace = savedOwner.getParkingSpaces().get(0);
+	    parkingSpace.setParkingowner(savedOwner);
+	    
+	    parkingSpaceRepo.save(parkingSpace);
+
+	    return savedOwner;
+	}
+
+	@Override
+	public List<ParkingOwner> getAllParkingOwners() {
+		// TODO Auto-generated method stub
+		
+		List<ParkingOwner> parkingOwners=parkingOwnerRepo.findAll();
+		return parkingOwners;
+	}
+
+	@Override
+	public boolean acceptOwnerRequest(long id) {
+		
+		
+		Optional<ParkingOwner> ownerop=parkingOwnerRepo.findById(id);
+		if(ownerop.isPresent()) {
+			ParkingOwner owner=ownerop.get();
+			List<ParkingSpace> spaces=owner.getParkingSpaces();
+		    ParkingSpace parkingSpace=spaces.get(0);
+		    List<ParkingSlot> slots=new ArrayList<>();
+		    for(int i=0;i<parkingSpace.getTotalSlots();i++) {
+		    	ParkingSlot slot=new ParkingSlot(i+1,false);
+		    	slots.add(slot);
+		    }
+		    parkingSpace.setParkingSlot(slots);
+		    spaces.add(parkingSpace);
+		    owner.setParkingSpaces(spaces);
+		    
+		  
+			parkingOwnerRepo.save(owner);
+			return true;
+		}
+		return false;
+	}
+
+	@Override
+	public boolean rejectOwnerRequest(long id) {
+		Optional<ParkingOwner> ownerop=parkingOwnerRepo.findById(id);
+		if(ownerop.isPresent()) {
+			ParkingOwner owner=ownerop.get();
+			owner.setStatus("Rejected");
+			parkingOwnerRepo.save(owner);
+			return true;
+		}
+		return false;  
+		
+	}
+
+	
+
+}

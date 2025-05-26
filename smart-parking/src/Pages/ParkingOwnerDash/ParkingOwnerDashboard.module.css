@@ -1,0 +1,26 @@
+.dashboardContainer {
+    display: flex;
+  }
+  
+  .mainContent {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .dashboardOverview {
+    margin-bottom: 30px;
+  }
+  
+  .overviewCards {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .overviewCard {
+    background-color: #ecf0f1;
+    padding: 20px;
+    border-radius: 10px;
+    width: 23%;
+    text-align: center;
+  }
+  

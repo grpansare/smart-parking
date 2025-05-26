@@ -1,0 +1,151 @@
+.main-div {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: white;
+  width: 100vw;
+}
+
+.background-container {
+  background-image: url("loginimage.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+* {
+  font-weight: bold;
+}
+
+.login-form-container {
+  position: relative;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.Space-owner-heading {
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.signup-link {
+  font-size: 16px;
+  margin-bottom: 15px;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.signup-link:hover {
+  text-decoration: underline;
+}
+
+.Space-owner-form-group {
+  align-items: baseline;
+  margin-bottom: 15px;
+}
+.Space-owner-remember-checkbox {
+  margin-right: 8px;
+}
+label {
+  font-size: 16px;
+  display: flex;
+  margin-bottom: 5px;
+  align-items: center;
+}
+
+.inputbox {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+.submitbtn {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.btn-custom {
+  background-color: purple;
+  color: white;
+  border: none;
+}
+
+.btn-custom:hover {
+  background-color: rgb(200, 38, 200);
+}
+
+.password-container {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.forgot-password {
+  margin-left: 150px;
+  color: #007bff;
+  text-decoration: none;
+}
+.forgot-password:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .login-form-container {
+    top: 20px;
+    left: 10px;
+    width: 90%;
+  }
+
+  .image-container {
+    display: none;
+  }
+  .submitbtn {
+    width: 100%;
+    padding: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-form-container {
+    top: 10px;
+    left: 5px;
+    width: 95%;
+    padding: 10px;
+  }
+
+  .Space-owner-heading {
+    font-size: 28px;
+  }
+
+  .signup-link {
+    font-size: 14px;
+  }
+
+  .btn-outline-success,
+  .btn-outline-primary {
+    width: 100%;
+  }
+  .submitbtn {
+    width: 100%;
+    padding: 12px;
+  }
+}

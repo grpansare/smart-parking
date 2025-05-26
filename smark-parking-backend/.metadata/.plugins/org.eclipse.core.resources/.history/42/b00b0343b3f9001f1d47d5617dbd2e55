@@ -1,0 +1,22 @@
+package com.parkease.services;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+
+import com.parkease.beans.User;
+import com.parkease.dao.ParkingUserRepo;
+
+public class ParkingUserServiceImpl implements ParkingUserService{
+	
+	@Autowired
+	ParkingUserRepo parkingUserRepo;
+
+	@Override
+	public List<User> getAllParkingUsers() {
+		// TODO Auto-generated method stub
+		return parkingUserRepo.findAll();
+	}
+
+}

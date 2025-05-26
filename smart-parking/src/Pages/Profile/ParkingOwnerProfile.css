@@ -1,0 +1,302 @@
+.owner-profile-container {
+  width: 80%;
+  margin: 5rem auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+}
+
+.owner-profile-section {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.owner-profile-left {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.owner-profile-picture {
+  margin-bottom: 10px;
+}
+
+.owner-profile-picture img {
+  width: 270px;
+  height: 270px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.owner-profile-picture input {
+  margin-top: 30px;
+  margin-left: 87px;
+}
+
+.owner-profile-right {
+  width: 65%;
+}
+
+.owner-profile-right label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.owner-profile-right input,
+.owner-profile-right select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.owner-profile-right button {
+  background-color: rgb(187, 13, 187);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+  margin-left: 100px;
+}
+
+.owner-profile-right button:hover {
+  background-color: purple;
+}
+
+.horizontal-navbar {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: #333;
+  padding: 10px 0;
+  margin-bottom: 20px;
+}
+
+.horizontal-navbar button {
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.horizontal-navbar button:hover {
+  background-color: #444;
+}
+
+.section-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+button {
+  background-color: rgb(187, 13, 187);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: purple;
+}
+
+.preferences-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.preferences-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.preferences-item label {
+  font-size: 18px;
+  margin-right: 13px;
+  white-space: nowrap;
+}
+
+.checkbox {
+  margin-left: 5px;
+}
+
+.checkbox2 {
+  margin-left: 113px;
+}
+
+.apply-button {
+  background-color: rgb(187, 13, 187);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-left: 345px;
+  margin-right: 340px;
+  margin-top: 20px;
+  width: 30%;
+}
+
+.apply-button:hover {
+  background-color: purple;
+}
+
+.submit-button {
+  background-color: rgb(187, 13, 187);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 20px;
+  margin-left: 345px;
+  margin-right: 340px;
+  width: 30%;
+}
+
+.submit-button:hover {
+  background-color: purple;
+}
+.owner-support-buttons-container button {
+  margin-bottom: 10px;
+  margin-left: 140px;
+}
+.owner-language-preference-container {
+  display: flex;
+  margin-left: 350px;
+  align-items: center;
+  gap: 30px;
+  padding-bottom: 20px;
+}
+.owner-security-button {
+  margin-bottom: 10px;
+  margin-left: 210px;
+}
+.parking-space-container,
+.pricing-availability-container,
+.bank-details-container,
+.security-settings-container,
+.support-buttons-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.parking-space-container input,
+.pricing-availability-container input,
+.bank-details-container input {
+  width: 300px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+h3 {
+  font-size: 24px;
+  font-weight: bold;
+}
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 25px;
+  border-radius: 8px;
+  width: 500px;
+  max-width: 90%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.modal-content h3 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 1.5rem;
+}
+
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.modal-form label {
+  font-weight: 500;
+  color: #555;
+}
+
+.modal-form input {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.modal-error {
+  color: #e74c3c;
+  margin: -10px 0 5px 0;
+  font-size: 0.85rem;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.modal-cancel {
+  padding: 10px 20px;
+  background-color: rgb(187, 13, 187);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.modal-cancel:hover {
+  background-color: purple;
+}
+
+.modal-save {
+  padding: 10px 20px;
+  background-color: rgb(187, 13, 187);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.modal-save:hover {
+  background-color: purple;
+}

@@ -1,0 +1,5 @@
+package com.parkease.dtos;
+
+public class StatusUpdateRequest {
+
+}
