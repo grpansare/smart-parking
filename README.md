@@ -1,139 +1,62 @@
-# 🚗 Smart Car Parking System
+Smart Car Parking System - README
+Overview
+A full-stack Smart Car Parking System designed to simplify the process of booking and managing parking spots in real-time. Built with React, Spring Boot, and Razorpay, it offers a seamless experience with mapping, payments, and role-based access.
+🔗 Live Demo
+🌐 Live Frontend: https://your-frontend-url.com
+🔧 Backend API: https://your-backend-url.com/api-docs
+🔧 Tech Stack
+• Frontend:
 
-A full-stack Smart Car Parking System designed to simplify the process of booking and managing parking spots in real-time. This project offers a seamless experience for users, parking owners, and admins, featuring role-based access, real-time availability, payments, and mapping services.
-
-## 🔧 Tech Stack
-
-### Frontend
-- React.js
-- Tailwind CSS
-- React Router
-- Axios
-- OpenStreetMap (Leaflet.js)
-
-### Backend
+- React.js + Tailwind CSS
+- React Router + Axios
+- OpenStreetMap (Leaflet)
+  • Backend:
 - Spring Boot (Java)
 - MySQL
-- Spring Security + JWT
-- Google OAuth
-
-### Payment Gateway
-- Razorpay API Integration
-
----
-
-## 📦 Features
-
-### 🚙 User Module
-- JWT & Google OAuth Authentication
-- Search & book parking spots using OpenStreetMap
-- Slot availability visualization
-- Get directions to parking locations
-- Booking history & invoice generation
-
-### 🅿️ Parking Owner Module
-- Add/Edit/Delete parking spaces
-- Floor-wise slot configuration
-- Set time-based pricing
-- Real-time slot availability
-- Add bank details for payments
-
-### 🔒 Admin Module
-- Dashboard to manage users and owners
-- View overall bookings and reports
-- Monitor parking spot statuses
-- Role-based access for owner and user modules
-
-### 💳 Payment System
-- Razorpay integration for online payments
-- Time-based dynamic pricing
-- Generate and download invoice post-booking
-
-### 📍 Map & Navigation
-- Show nearby parking on OpenStreetMap
-- Directions using Leaflet Routing Machine
-
----
-
-## 🏗️ Project Structure
+- JWT + Google OAuth
+- Razorpay Payments
+  📦 Features
+  • 🚙 User Features
+- Secure login via JWT and Google
+- Search & book parking via interactive map
+- View slot availability in real-time
+- Get navigation directions
+- Booking history and invoices
+  • 🅿️ Parking Owner Features
+- Add/edit parking spaces and slots
+- Floor-wise management
+- Dynamic pricing and availability
+- Bank account integration
+  • 🛡️ Admin Features
+- View and manage users, owners, bookings
+- Monthly reports
+- Role-based dashboard
+  • 💳 Payments
+- Razorpay integration
+- Time-based pricing logic
+- Invoice generation
+  🏗️ Project Structure
 
 smart-car-parking-system/
 ├── backend/
-│ ├── src/
-│ │ ├── main/java/com/parking/...
-│ │ └── resources/
-│ │ ├── application.properties
-│ └── pom.xml
-├── frontend/
-│ └── citycare/
-│ ├── public/
 │ └── src/
-│ ├── components/
-│ ├── pages/
-│ ├── App.jsx
-│ └── main.jsx
+│ └── main/java/com/parking/...
+│ └── resources/application.properties
+├── smart-parking/
+│ └── /src/components, pages/
+│  
 └── README.md
 
-yaml
-Copy
-Edit
-
----
-
-## 🚀 Getting Started
-
-### Prerequisites
-- Node.js & npm
-- MySQL
-- Java 17+
-- Maven
-
-### 1. Backend Setup
-
-```bash
-cd backend
-# Add MySQL credentials in application.properties
+🚀 Getting Started
+Backend:
+cd smart-parking-backend
 mvn spring-boot:run
-2. Frontend Setup
-bash
-Copy
-Edit
-cd frontend/citycare
+Frontend:
+cd smart-parking
 npm install
 npm run dev
-🔑 Environment Variables
-Backend (application.properties)
-properties
-Copy
-Edit
-spring.datasource.url=jdbc:mysql://localhost:3306/parking_db
-spring.datasource.username=root
-spring.datasource.password=yourpassword
-
-jwt.secret=your_jwt_secret_key
-razorpay.key_id=your_razorpay_key
-razorpay.key_secret=your_razorpay_secret
-Frontend (.env)
-env
-Copy
-Edit
-VITE_API_BASE_URL=http://localhost:8080/api
-VITE_RAZORPAY_KEY=your_razorpay_key
-📸 Screenshots
-Add UI screenshots here to showcase your app (Home Page, Map View, Owner Dashboard, etc.)
-
-📚 Documentation
-Project Report
-
-Database Schema Diagram
-
-API Endpoints List
-
-ER Diagram
-
-(Include in a /docs folder if submitting)
 
 🤝 Team Members
-Name	Role
-Ganesh Pansare	Full Stack Dev
-Atharv Raut	Backend Specialist
+Name Role
+Ganesh Pansare Full Stack Dev
+Atharv Raut Backend Specialist
