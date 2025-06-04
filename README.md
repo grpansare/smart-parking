@@ -6,13 +6,6 @@ GitHub Repo: [grpansare/smark_car_parking](https://github.com/grpansare/smark_ca
 
 ---
 
-## 🔗 Live Demo
-
-- 🌐 **Frontend**: [https://smart-parking-frontend.vercel.app](#)
-- ⚙️ **Backend API**: [https://smart-parking-backend.onrender.com/api](#)  
-
-
----
 
 ## 📦 Features
 
