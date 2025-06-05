@@ -1,15 +1,13 @@
-Smart Car Parking System
+🚗 Smart Car Parking System
 📖 Overview
 A full-stack Smart Car Parking System designed to simplify the process of booking and managing parking spots in real-time. Built with React, Spring Boot, and Razorpay, it offers a seamless experience with mapping, payments, and role-based access.
 
-🔗 Live Demo
-🌐 Frontend: https://your-frontend-url.com
-
-🔧 Backend API Docs: https://your-backend-url.com/api-docs
 
 🛠️ Tech Stack
 🖥️ Frontend
-React.js + Tailwind CSS
+React.js
+
+Tailwind CSS
 
 React Router
 
@@ -22,33 +20,33 @@ Spring Boot (Java)
 
 MySQL
 
-JWT + Google OAuth
+JWT Authentication + Google OAuth
 
-Razorpay Payments Integration
+Razorpay Payment Integration
 
 📦 Features
-🚙 User Features
+🚙 User
 Secure login via JWT and Google
 
 Search & book parking via interactive map
 
-View slot availability in real-time
+Real-time slot availability
 
-Get navigation directions
+Navigation directions
 
-Booking history and invoices
+Booking history & invoices
 
-🅿️ Parking Owner Features
-Add/edit parking spaces and slots
+🅿️ Parking Owner
+Add/Edit parking spaces and slots
 
 Floor-wise management
 
-Dynamic pricing and availability
+Set dynamic pricing and availability
 
 Bank account integration
 
-🛡️ Admin Features
-View and manage users, owners, bookings
+🛡️ Admin
+View and manage users, owners, and bookings
 
 Monthly reports
 
@@ -57,18 +55,18 @@ Role-based dashboard
 💳 Payments
 Razorpay integration
 
-Time-based pricing logic
+Time-based pricing
 
 Invoice generation
 
-🏗️ Project Structure
+🗂️ Project Structure
 css
 Copy
 Edit
 smart-car-parking-system/
 ├── backend/
 │   └── src/
-│       └── main/java/com/parking/...
+│       ├── main/java/com/parking/...
 │       └── resources/application.properties
 ├── smart-parking/
 │   └── src/
@@ -76,13 +74,13 @@ smart-car-parking-system/
 │       └── pages/
 └── README.md
 🚀 Getting Started
-Backend
+▶️ Backend
 bash
 Copy
 Edit
 cd smart-parking-backend
 mvn spring-boot:run
-Frontend
+💻 Frontend
 bash
 Copy
 Edit
@@ -92,4 +90,4 @@ npm run dev
 🤝 Team Members
 Name	Role
 Ganesh Pansare	Full Stack Developer
-Atharv Raut	Backend Specialist
+Atharv Raut	Frontend Specialist
